@@ -1,0 +1,19 @@
+
+<form action="?" method="get">
+Image URL: <input type=text name="image" size="120" value="<%=params[:image]%>" /><br/>
+Width: <input type=text name="width" size="10" value="<%=params[:width]%>" /><br/>
+Height: <input type=text name="height" size="10" value="<%=params[:height]%>" /><br/>
+Padding: <input type=text name="padding" size="10" value="<%=params[:padding]%>" /><br/>
+<input type=hidden name="html" value="1" />
+<input type="submit" value="Submit">
+</form>
+
+<% if params[:image].present? %>
+<br/><br/>
+<h1>Original Image</h1>
+<img src="<%=params[:image]%>" />
+<br/>
+<h1>Resized Image</h1>
+<img src="?image=<%=params[:image]%>&width=<%=params[:width]%>&height=<%=params[:height]%>&padding=<%=params[:padding]%>" />
+<br/>
+<% end %>
