@@ -1,6 +1,5 @@
 aptitude install rails1.9.1-full build-essential imagemagick libsqlite3-dev libv8-dev libcurl4-openssl-dev libssl-dev zlib1g-dev libpcre3-dev git
 
-gem install rack
 gem install bundler
 gem install passenger
 
