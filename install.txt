@@ -1,12 +1,15 @@
-aptitude install rails1.9.1-full build-essential imagemagick libsqlite3-dev libv8-dev libcurl4-openssl-dev libssl-dev zlib1g-dev libpcre3-dev git
+aptitude install ruby1.9.1-full build-essential imagemagick libsqlite3-dev libv8-dev libcurl4-openssl-dev libssl-dev zlib1g-dev libpcre3-dev git
 
 gem install bundler
-gem install passenger
 
+cd /var/www/rails-apps/logoresize
+bundle install
+
+gem install passenger
 passenger-install-nginx-module --auto --auto-download --prefix=/opt/nginx
 wget https://raw.github.com/jnstq/rails-nginx-passenger-ubuntu/master/nginx/nginx -O /etc/init.d/nginx
 chmod +x /etc/init.d/nginx
 update-rc.d -f nginx defaults 
-
 cp -f /var/www/nginx.conf /opt/nginx/conf/
 service nginx start
+
